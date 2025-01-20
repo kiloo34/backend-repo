@@ -7,7 +7,6 @@ export const findAll = async () => {
     try {
         const usersCol = collection(db, COLLECTION_NAME);
         const userSnapshot = await getDocs(usersCol);
-        console.log(userSnapshot);
         return userSnapshot.docs.map(doc => ({
             id: doc.id,
             ...doc.data()
